@@ -1,0 +1,15 @@
+{
+  "name": "wechaty-plugin-yd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "got": "^11.3.0"
+  },
+  "devDependencies": {
+    "@chatie/eslint-config": "^0.8.1",
+    "@chatie/tsconfig": "^0.10.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  }
+}
