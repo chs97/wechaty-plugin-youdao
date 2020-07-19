@@ -4,6 +4,7 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   env: {
     node: true,
+    jest: true
   },
   rules: {
     'no-unused-vars': 'off',

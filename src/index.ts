@@ -1,4 +1,4 @@
-import { WechatyPlugin, log, Message, FileBox } from 'wechaty'
+import { WechatyPlugin, log, Message, UrlLink } from 'wechaty'
 import { YouDaoTranslatorPluginOption, translate } from './yd'
 
 export function wechatyYouDaoPlugin(options: YouDaoTranslatorPluginOption): WechatyPlugin {
@@ -33,10 +33,16 @@ export function wechatyYouDaoPlugin(options: YouDaoTranslatorPluginOption): Wech
       await message.say(result.translation.join('\n'))
 
       if (options.needMP3) {
-        const speak = FileBox.fromUrl(result.speakUrl)
-        await bot.say(speak)
-        const tspeak = FileBox.fromUrl(result.tSpeakUrl)
-        await bot.say(tspeak)
+        const speak = new UrlLink({
+          url: result.tSpeakUrl,
+          title: `翻译结果发音：${result.translation.join(',')}`,
+        })
+        await message.say(speak)
+        const tspeak = new UrlLink({
+          url: result.speakUrl,
+          title: `源语言发音：${p}`,
+        })
+        await message.say(tspeak)
       }
     })
   }

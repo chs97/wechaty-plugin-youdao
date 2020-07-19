@@ -1,13 +1,17 @@
 {
   "name": "wechaty-plugin-yd",
-  "version": "1.0.0",
-  "main": "index.js",
+  "author": "Chs97 <chsqaq@gmail.com>",
+  "description": "YouDao Plugin for wechaty.",
+  "version": "1.1.2",
+  "main": "dist/src/index.js",
   "license": "MIT",
   "scripts": {
-    "test:unit": "blue-tape -r ts-node/register \"src/**/*.spec.ts\" \"src/*.spec.ts\" \"tests/*.spec.ts\" \"tests/**/*.spec.ts\""
+    "test": "jest --coverage",
+    "build": "tsc"
   },
   "dependencies": {
     "got": "^11.3.0",
+    "install": "^0.13.0",
     "lodash": "^4.17.19",
     "uuid": "^8.2.0",
     "wechaty": "^0.40.10"
@@ -15,18 +19,22 @@
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",
     "@chatie/tsconfig": "^0.10.1",
+    "@types/jest": "^26.0.4",
     "@types/lodash": "^4.14.157",
     "@types/uuid": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.1.0",
     "prettier": "^2.0.5",
-    "sinon": "^9.0.2",
+    "ts-jest": "^26.1.2",
     "ts-node": "^8.10.2",
-    "tstest": "^0.4.10",
     "typescript": "^3.9.5",
     "wechaty-puppet": "^0.26.2",
     "wechaty-puppet-mock": "^0.22.38"
-  }
+  },
+  "files": [
+    "dist/src"
+  ]
 }

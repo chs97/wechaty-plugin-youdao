@@ -36,7 +36,7 @@ export interface RequestData extends Options {
 }
 
 export interface ResponseData {
-  /** 源发音地址 */
+  /** 翻译结果地址 */
   tSpeakUrl: string
   /** 请求的ID */
   RequestId: string
